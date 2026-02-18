@@ -90,6 +90,5 @@ app.post('/api/login', async (req, res) => {
     if (user) res.json(user);
     else res.status(401).send("خطأ في البيانات");
 });
-
-const PORT = 5000;
-app.listen(PORT, () => console.log(`الباك اند يعمل على المنفذ ${PORT}`));
+const PORT = process.env.PORT || 3000;
+app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
