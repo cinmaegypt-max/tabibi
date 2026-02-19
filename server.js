@@ -15,7 +15,7 @@ app.use(cors({
 }));
 
 // الاتصال بقاعدة البيانات MongoDB
-mongoose.connect('mongodb+srv://cinmaegypt_db_user:<db_password>@cluster0.ilcsqff.mongodb.net/?appName=Cluster0', {
+mongoose.connect('mongodb+srv://cinmaegypt_db_user:hamed@220194@cluster0.ilcsqff.mongodb.net/?appName=Cluster0', {
     useNewUrlParser: true,
     useUnifiedTopology: true
 });
