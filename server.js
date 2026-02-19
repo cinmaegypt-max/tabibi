@@ -6,7 +6,13 @@ const cloudinary = require('cloudinary').v2; // لتخزين الصور سحاب
 
 const app = express();
 app.use(express.json({ limit: '50mb' })); // للسماح بالصور الكبيرة
-app.use(cors());
+
+// اطلب من السيرفر السماح بكل الروابط (أسهل حل الآن)
+app.use(cors({
+    origin: '*', 
+    methods: ['GET', 'POST', 'DELETE', 'PUT'],
+    allowedHeaders: ['Content-Type']
+}));
 
 // الاتصال بقاعدة البيانات MongoDB
 mongoose.connect('mongodb+srv://cinmaegypt_db_user:<db_password>@cluster0.ilcsqff.mongodb.net/?appName=Cluster0', {
